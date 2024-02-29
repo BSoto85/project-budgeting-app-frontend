@@ -5,7 +5,6 @@ import TransactionsIndex from "../components/TransactionsIndex";
 import TransactionShow from "../components/TransactionShow";
 import TransactionForm from "../components/TransactionForm";
 import TransactionEdit from "../components/TransactionEdit";
-import Footer from "../components/common/Footer";
 
 const App = () => {
   const [transactionArray, setTransactionArray] = useState([]);
@@ -43,7 +42,6 @@ const App = () => {
           }
         />
       </Routes>
-      <Footer />
     </div>
   );
 };

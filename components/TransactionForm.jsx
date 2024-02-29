@@ -26,6 +26,7 @@ const TransactionForm = ({ setTransactionArray }) => {
     fetch("http://localhost:3333/transactions", options)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         if (data.message) alert("All inputs must be filled");
         else {
           setTransactionArray(data.transactions);
