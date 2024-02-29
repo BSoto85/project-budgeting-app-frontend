@@ -18,15 +18,30 @@ const App = () => {
 
   return (
     <div>
-      <NavBar />
+      <NavBar transactionArray={transactionArray} />
       <Routes>
         <Route
           path="/"
           element={<TransactionsIndex transactionArray={transactionArray} />}
         />
-        <Route path="/:id" element={<TransactionShow />} />
-        <Route path="/new" element={<TransactionForm />} />
-        <Route path="/edit/:id" element={<TransactionEdit />} />
+        <Route
+          path="/:id"
+          element={
+            <TransactionShow setTransactionArray={setTransactionArray} />
+          }
+        />
+        <Route
+          path="/new"
+          element={
+            <TransactionForm setTransactionArray={setTransactionArray} />
+          }
+        />
+        <Route
+          path="/edit/:id"
+          element={
+            <TransactionEdit setTransactionsArray={setTransactionArray} />
+          }
+        />
       </Routes>
       <Footer />
     </div>
