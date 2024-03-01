@@ -1,5 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Kode Mono";
+}
+
+html {
+  background: url("https://t4.ftcdn.net/jpg/03/51/47/99/360_F_351479995_2c25O3ebKdrGGaj0X6SQyjdsRymXI9gA.jpg")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.red {
+  color: red;
+}
+
+.yellow {
+  color: goldenrod;
+}
+
+.green {
+  color: darkgreen;
 }

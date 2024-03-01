@@ -3,8 +3,24 @@ import { total } from "../helper";
 
 const AccountTotal = ({ transactionArray }) => {
   return (
-    <div>
-      <h3>Total: ${total(transactionArray)}</h3>
+    <div className="total-container">
+      <section>
+        <h3>
+          Total:{" "}
+          <span
+            className={
+              total(transactionArray) < 0
+                ? "red"
+                : total(transactionArray) <= 100
+                ? "yellow"
+                : "green"
+            }
+            style={{ backgroundColor: "dodgerblue" }}
+          >
+            ${total(transactionArray)}
+          </span>
+        </h3>
+      </section>
     </div>
   );
 };

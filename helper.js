@@ -1,5 +1,6 @@
 export function formattedDate(date) {
-  const transactionDate = new Date(date);
+  const parts = date.split("-");
+  const transactionDate = new Date(parts[0], parts[1] - 1, parts[2]);
   return transactionDate.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
