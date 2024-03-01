@@ -134,7 +134,7 @@ const TransactionForm = ({ setTransactionArray }) => {
           </label>
         </section>
         <section className="buttons">
-          <button>Add</button>
+          <button>Submit</button>
           <Link to={"/"}>
             <button>Cancel</button>
           </Link>
