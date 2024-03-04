@@ -42,6 +42,10 @@ const App = () => {
             <TransactionEdit setTransactionsArray={setTransactionArray} />
           }
         />
+        <Route
+          path="/spending"
+          element={<SpendingChart transactionArray={transactionArray} />}
+        />
       </Routes>
     </div>
   );
