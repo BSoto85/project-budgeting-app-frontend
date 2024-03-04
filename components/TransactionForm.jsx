@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./TransactionForm.css";
+const URL = import.meta.env.VITE_BASE_API_URL;
 
 const TransactionForm = ({ setTransactionArray }) => {
   const [transaction, setTransaction] = useState({
@@ -24,7 +25,7 @@ const TransactionForm = ({ setTransactionArray }) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(transaction),
     };
-    fetch("http://localhost:3333/transactions", options)
+    fetch(URL, options)
       .then((res) => res.json())
       .then((data) => {
         if (data.message) alert("All inputs must be filled");

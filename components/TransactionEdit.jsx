@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import "./TransactionForm.css";
+const URL = import.meta.env.VITE_BASE_API_URL;
 
 const TransactionEdit = ({ setTransactionsArray }) => {
   const [transaction, setTransaction] = useState({
@@ -26,7 +27,7 @@ const TransactionEdit = ({ setTransactionsArray }) => {
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(transaction),
       };
-      fetch(`http://localhost:3333/transactions/${id}`, options)
+      fetch(`${URL}/${id}`, options)
         .then((res) => res.json())
         .then((data) => setTransactionsArray(data.transactions))
         .then(() => navigate("/"));
@@ -35,7 +36,7 @@ const TransactionEdit = ({ setTransactionsArray }) => {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3333/transactions/${id}`)
+      fetch(`${URL}/${id}`)
         .then((res) => res.json())
         .then((data) => setTransaction(data.transaction));
     }

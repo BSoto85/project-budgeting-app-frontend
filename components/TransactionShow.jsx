@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { formattedDate } from "../helper";
 import "./TransactionsIndex.css";
+const URL = import.meta.env.VITE_BASE_API_URL;
 
 const TransactionShow = ({ setTransactionArray }) => {
   const { id } = useParams();
@@ -16,7 +17,7 @@ const TransactionShow = ({ setTransactionArray }) => {
       const options = {
         method: "DELETE",
       };
-      fetch(`http://localhost:3333/transactions/${id}`, options)
+      fetch(`${URL}/${id}`, options)
         .then((res) => res.json())
         .then((data) => setTransactionArray(data.transactions));
       navigate("/");
@@ -24,7 +25,7 @@ const TransactionShow = ({ setTransactionArray }) => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:3333/transactions/${id}`)
+    fetch(`${URL}/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setTransactionDetail(data.transaction);

@@ -5,12 +5,13 @@ import TransactionsIndex from "../components/TransactionsIndex";
 import TransactionShow from "../components/TransactionShow";
 import TransactionForm from "../components/TransactionForm";
 import TransactionEdit from "../components/TransactionEdit";
+const URL = import.meta.env.VITE_BASE_API_URL;
 
 const App = () => {
   const [transactionArray, setTransactionArray] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3333/transactions")
+    fetch(URL)
       .then((res) => res.json())
       .then((data) => setTransactionArray(data.transactions));
   }, []);
